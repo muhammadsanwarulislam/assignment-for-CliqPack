@@ -28,11 +28,143 @@ Follow the steps mentioned below to install and run the project.
 8. To login as a Manager provide email `manager@gmail.com`and password `password`
 9. To login as a Teammate provide email `teammate@gmail.com`and password `password`
 
-## Q3
-# Short brif
-Database structure for `users` table.
-  1. User have id, username, email, email_verified_at, password, remember_token, created_at, updated_at, deleted_at, role_id.
-  2. In the `users` table `role_id` define the employee role like is he/she a Manager or Teammate.
-  3. When any user `register` from the registration page he/she will play as a Manager role.
-  4. When `Manager` create a user as `Teammate` The user password will be `password` which is generated from `generateDefaultPassword` function.
 
+
+```markdown
+# API Documentation
+
+## Login
+
+### Description
+This API endpoint allows users to log in to the system.
+
+### Endpoint
+```
+POST /api/login
+```
+
+### Request Parameters
+- `email` (string, required): The email of the user.
+- `password` (string, required): The password of the user.
+
+### Request Example
+```json
+POST /api/login
+Content-Type: application/json
+
+{
+  "email": "example_user",
+  "password": "example_password"
+}
+```
+
+### Response Example (Success)
+```json
+Status: 200 OK
+Content-Type: application/json
+
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+
+### Response Example (Error)
+```json
+Status: 401 Unauthorized
+Content-Type: application/json
+
+{
+  "error": "Invalid username or password"
+}
+```
+
+## Registration
+
+### Description
+This API endpoint allows users to register for a new account.
+
+### Endpoint
+```
+POST /api/register
+```
+
+### Request Parameters
+- `username` (string, required): The desired username for the new account.
+- `password` (string, required): The password for the new account.
+- `email` (string, required): The email address for the new account.
+
+### Request Example
+```json
+POST /api/register
+Content-Type: application/json
+
+{
+  "username": "new_user",
+  "password": "new_password",
+  "email": "new_user@example.com"
+}
+```
+
+### Response Example (Success)
+```json
+Status: 201 Created
+Content-Type: application/json
+
+{
+  "message": "User registered successfully"
+}
+```
+
+### Response Example (Error)
+```json
+Status: 400 Bad Request
+Content-Type: application/json
+
+{
+  "error": "Username already exists"
+}
+```
+
+## Inventory
+
+### Description
+This API endpoint manages the inventory of items.
+
+### Item
+
+#### Description
+Represents an item in the inventory.
+
+#### Attributes
+- `id` (string, required): The unique identifier of the item.
+- `name` (string, required): The name of the item.
+- `description` (string, optional): The description of the item.
+- `quantity` (integer, required): The quantity of the item.
+- `price` (number, required): The price of the item.
+
+### Endpoints
+
+#### Create Item
+```
+POST /api/inventory/create
+```
+... (Add documentation for create item endpoint similar to previous examples)
+
+#### Read Item
+```
+GET /api/inventory/{id}
+```
+... (Add documentation for read item endpoint similar to previous examples)
+
+#### Update Item
+```
+PUT /api/inventory/update/{id}
+```
+... (Add documentation for update item endpoint similar to previous examples)
+
+#### Delete Item
+```
+DELETE /api/inventory/delete/{id}
+```
+... (Add documentation for delete item endpoint similar to previous examples)
+```
