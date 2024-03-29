@@ -48,7 +48,7 @@ POST /api/login
 - `password` (string, required): The password of the user.
 
 ### Request Example
-```json
+json
 POST /api/login
 Content-Type: application/json
 
@@ -56,27 +56,27 @@ Content-Type: application/json
   "email": "example_user",
   "password": "example_password"
 }
-```
+
 
 ### Response Example (Success)
-```json
+json
 Status: 200 OK
 Content-Type: application/json
 
 {
   "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 }
-```
+
 
 ### Response Example (Error)
-```json
+json
 Status: 401 Unauthorized
 Content-Type: application/json
 
 {
   "error": "Invalid username or password"
 }
-```
+
 
 ## Registration
 
@@ -94,7 +94,7 @@ POST /api/register
 - `email` (string, required): The email address for the new account.
 
 ### Request Example
-```json
+json
 POST /api/register
 Content-Type: application/json
 
@@ -103,27 +103,27 @@ Content-Type: application/json
   "password": "new_password",
   "email": "new_user@example.com"
 }
-```
+
 
 ### Response Example (Success)
-```json
+json
 Status: 201 Created
 Content-Type: application/json
 
 {
   "message": "User registered successfully"
 }
-```
+
 
 ### Response Example (Error)
-```json
+json
 Status: 400 Bad Request
 Content-Type: application/json
 
 {
   "error": "Username already exists"
 }
-```
+
 
 ## Inventory
 
