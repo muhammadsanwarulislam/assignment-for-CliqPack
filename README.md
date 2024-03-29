@@ -2,7 +2,7 @@
 |           #             |   **Instructions**      |
 |-------------------------|-------------------------|
 | Step-1                  |   [Setup Nuxt project](#q1)<br>[Setup Laravel project](#q2)<br>|
-| Short brief             |   [User Authentication and Authorization](#q3)<br>|
+| Short brief             |   [Api documentation](#q3)<br>|
 
 
 ## Q1
@@ -30,7 +30,7 @@ Follow the steps mentioned below to install and run the project.
 
 
 
-```markdown
+## Q3
 # API Documentation
 
 ## Login
